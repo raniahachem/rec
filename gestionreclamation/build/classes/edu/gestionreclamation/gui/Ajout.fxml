@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="726.0" prefWidth="1267.0" style="-fx-background-color: #7cb8d6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gestionreclamation.gui.AjoutController">
+   <children>
+      <Pane layoutX="28.0" layoutY="59.0" prefHeight="608.0" prefWidth="965.0" style="-fx-background-color: #dbeaf1; -fx-border-color: #131314;">
+         <children>
+            <Label layoutX="26.0" layoutY="230.0" text="Description:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="29.0" prefHeight="37.0" prefWidth="292.0" text="Ajout d'une réclamation" textFill="#196086">
+               <font>
+                  <Font name="Corbel Bold Italic" size="28.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="tfdate" layoutX="91.0" layoutY="126.0" prefHeight="33.0" prefWidth="226.0" style="-fx-background-color: #ffffff; -fx-border-color: #131314;" />
+            <ChoiceBox fx:id="tftype" layoutX="91.0" layoutY="78.0" prefHeight="33.0" prefWidth="226.0" style="-fx-background-color: #ffffff; -fx-border-color: #131314;" />
+            <TextArea fx:id="tfdescription" cache="true" depthTest="DISABLE" layoutX="26.0" layoutY="266.0" prefHeight="133.0" prefWidth="292.0" promptText="votre reclamation" style="-fx-border-color: #131314;" />
+            <Button fx:id="btnenvoyer" layoutX="27.0" layoutY="416.0" mnemonicParsing="false" onAction="#ajouterreclamation" prefHeight="33.0" prefWidth="103.0" style="-fx-border-color: #131314; -fx-background-color: #000000;" text="Envoyer" textFill="WHITE" />
+            <TableView fx:id="tableReclamations" layoutX="401.0" layoutY="124.0" onMouseClicked="#afficherReclamationSelectionnee" prefHeight="416.0" prefWidth="539.0" style="-fx-background-color: #ffff; -fx-border-color: #131314;">
+          <columns>
+              <TableColumn fx:id="colId" prefWidth="50" text="ID" />
+              <TableColumn fx:id="colType" prefWidth="100.0" text="Type" />
+              <TableColumn fx:id="colDate" prefWidth="87.0" text="Date" />
+              <TableColumn fx:id="colDescription" prefWidth="313.0" text="Description" />
+          </columns>
+      </TableView>
+            <Button fx:id="btnmodifier" layoutX="443.0" layoutY="79.0" mnemonicParsing="false" onAction="#modifierreclamation" prefHeight="27.0" prefWidth="91.0" style="-fx-border-color: #131314; -fx-background-color: #000000;" text="Modifier" textFill="WHITE" />
+            <Button fx:id="btnsupprimer" layoutX="546.0" layoutY="78.0" mnemonicParsing="false" onAction="#supprimerreclamation" prefHeight="31.0" prefWidth="103.0" style="-fx-border-color: #131314; -fx-background-color: #000000;" text="Supprimer" textFill="WHITE" />
+            <Label layoutX="447.0" layoutY="29.0" text="Mes anciennes réclamations" textFill="#196086">
+               <font>
+                  <Font name="Corbel Bold Italic" size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="79.0" prefHeight="27.0" prefWidth="47.0" text="Type:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="31.0" layoutY="126.0" text="Date:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="pdf" layoutX="665.0" layoutY="78.0" mnemonicParsing="false" onAction="#generatePDF" prefHeight="27.0" prefWidth="74.0" style="-fx-border-color: #131314; -fx-background-color: #000000;" text="PDF" textFill="WHITE" />
+            <Label layoutX="28.0" layoutY="179.0" text="Email:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="emailField" layoutX="91.0" layoutY="173.0" prefHeight="33.0" prefWidth="226.0" promptText="veuillez entrer une email valide" style="-fx-border-color: #131314;" />
+         </children>
+      </Pane>
+      <VBox layoutX="1025.0" layoutY="59.0" prefHeight="608.0" prefWidth="214.0" style="-fx-background-color: #000000; -fx-border-color: #131314;">
+         <children>
+            <Button fx:id="btnreclamation" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#gererReclamations" prefHeight="32.0" prefWidth="294.0" style="-fx-border-color: #131314;" text="Réclamation" textFill="#003149">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAvis" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#gererAvis" opacity="0.6" prefHeight="32.0" prefWidth="290.0" style="-fx-border-color: #131314;" text="Avis" textFill="#003149">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="image1" fitHeight="183.0" fitWidth="215.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+      <Button layoutX="1132.0" layoutY="14.0" mnemonicParsing="false" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" text="Déconnexion">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="btnretour" layoutY="-3.0" mnemonicParsing="false" onAction="#retour" prefHeight="34.0" prefWidth="40.0" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" text="&lt;-">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

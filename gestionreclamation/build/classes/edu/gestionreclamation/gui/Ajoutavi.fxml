@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane id="AnchorPane" prefHeight="726.0" prefWidth="1267.0" style="-fx-background-color: #7cb8d6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.gestionreclamation.gui.AjoutaviController">
+   <children>
+      <Pane layoutX="28.0" layoutY="59.0" prefHeight="608.0" prefWidth="965.0" style="-fx-background-color: #dbeaf1; -fx-border-color: #131314;">
+         <children>
+            <Label layoutX="27.0" layoutY="124.0" text="Note:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="29.0" prefHeight="37.0" prefWidth="292.0" text="Ajout d'un avi" textFill="#196086">
+               <font>
+                  <Font name="Corbel Bold Italic" size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="79.0" prefHeight="27.0" prefWidth="182.0" text="ID conducteur:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnajouternote" layoutX="27.0" layoutY="171.0" mnemonicParsing="false" onAction="#ajouterNote2" prefHeight="44.0" prefWidth="105.0" style="-fx-border-color: #000000; -fx-background-color: #000000;" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <TextArea fx:id="txtMoyennes" editable="false" layoutX="483.0" layoutY="120.0" prefHeight="102.0" prefWidth="431.0" />
+            <Button fx:id="btnnote" layoutX="483.0" layoutY="76.0" mnemonicParsing="false" onAction="#afficherMoyennes" prefHeight="33.0" prefWidth="431.0" style="-fx-border-color: #000000; -fx-background-color: #000000;" text="afficher les notes attribuées aux conducteurs" textFill="WHITE" />
+            <Rating fx:id="rating" layoutX="79.0" layoutY="120.0" rating="1.0" />
+            <Label fx:id="message" layoutX="263.0" layoutY="116.0" prefHeight="44.0" prefWidth="159.0">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="idConducteur" layoutX="156.0" layoutY="77.0" promptText="entrez l'ID de conducteur" />
+         </children>
+      </Pane>
+      <VBox layoutX="1025.0" layoutY="59.0" prefHeight="608.0" prefWidth="214.0" style="-fx-background-color: #000000; -fx-border-color: #131314;">
+         <children>
+            <Button fx:id="btnreclamation" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#gererReclamations" opacity="0.6" prefHeight="32.0" prefWidth="294.0" style="-fx-border-color: #131314;" text="Réclamation" textFill="#003149">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAvis" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#gererAvis" prefHeight="32.0" prefWidth="290.0" style="-fx-border-color: #131314;" text="Avis" textFill="#003149">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="image1" fitHeight="183.0" fitWidth="215.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+      <Button layoutX="1130.0" layoutY="14.0" mnemonicParsing="false" style="-fx-border-color: #ffffff; -fx-background-color: #ffffff;" text="Déconnexion">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+   </children>
+</AnchorPane>
